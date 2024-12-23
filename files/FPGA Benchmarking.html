@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automating FPGA Benchmarking with a Bash Script</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+        }
+        header {
+            position: relative;
+            text-align: center;
+        }
+        header img {
+            width: 100%;
+            height: auto;
+        }
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        section {
+            margin: 20px 0;
+        }
+        h2, h3 {
+            color: #007acc;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="bash-wallpaper.jpg" alt="Custom Banner">
+        <h1>Automating FPGA Benchmarking with a Bash Script</h1>
+    </header>
+
+    <section>
+        <p>This webpage provides an overview of the automated FPGA benchmarking framework I created using a Bash-based script. The documentation is designed to help readers grasp the tool's purpose, functionality, and its pivotal role in optimizing and simplifying benchmarking workflows.</p>
+        
+        <h2>Overview</h2>
+        <p>Field Programmable Gate Arrays (FPGAs) are reconfigurable chips widely used in applications like telecommunications, AI, and data centers. Benchmarking these devices helps developers evaluate performance metrics such as resource utilization, timing, and Fmax.</p>
+        <p>Manually benchmarking FPGA designs can be complex, time-consuming, and prone to errors. This script simplifies the process, ensuring consistent and reproducible results.</p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Support for Multiple Tools:</strong> Automates workflows for tools like Raptor, Vivado, Radiant, and Libero.</li>
+            <li><strong>Customizable Options:</strong> Enables user-defined parameters like device selection, synthesis modes, and placement options.</li>
+            <li><strong>Environment Setup:</strong> Automatically configures paths and environmental variables for RTL files and constraints.</li>
+            <li><strong>Build Organization:</strong> Outputs benchmarking results in well-structured, timestamped directories.</li>
+            <li><strong>Version Control Integration:</strong> Allows users to push results to Git repositories for collaboration.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How It Works</h2>
+        <h3>1. Input Configuration</h3>
+        <p>The script accepts several command-line arguments for defining parameters like:</p>
+        <ul>
+            <li><strong>Design Selection:</strong> Specifies the VHDL/Verilog/SystemVerilog design.</li>
+            <li><strong>Tool Specification:</strong> Identifies the FPGA development tool (e.g., Vivado, Raptor).</li>
+            <li><strong>Device Targeting:</strong> Chooses the device to benchmark.</li>
+            <li><strong>Optimization Options:</strong> Includes place-and-route (PnR) directives and synthesis modes.</li>
+        </ul>
+        <p>Example command:</p>
+        <pre><code>./run_benchmarking.sh -design=my_design -tool=vivado -device=zynq7k -synmode=delay</code></pre>
+
+        <h3>2. Tool-Specific Setup</h3>
+        <p>Based on the input tool, the script:</p>
+        <ul>
+            <li>Loads the required tool module.</li>
+            <li>Sets environment variables for tool-specific constraints and settings.</li>
+            <li>Configures the build environment.</li>
+        </ul>
+
+        <h3>3. Automated Workflow</h3>
+        <p>The script automates:</p>
+        <ul>
+            <li><strong>Synthesis:</strong> Configures and compiles the design.</li>
+            <li><strong>Place-and-Route (PnR):</strong> Optimizes design placement on the FPGA fabric.</li>
+            <li><strong>Constraint Integration:</strong> Applies user-defined or default constraints for accurate benchmarking.</li>
+        </ul>
+
+        <h3>4. Build Logging</h3>
+        <p>Generates comprehensive logs capturing configuration settings, tool outputs, and build results for further analysis.</p>
+
+        <h3>5. Git Integration</h3>
+        <p>Users can:</p>
+        <ul>
+            <li>Push results automatically.</li>
+            <li>Opt for confirmation before pushing.</li>
+            <li>Skip pushing entirely if desired.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Why It Matters</h2>
+        <ul>
+            <li><strong>Time Efficiency:</strong> Eliminates repetitive manual tasks, saving significant time during benchmarking.</li>
+            <li><strong>Consistency and Reproducibility:</strong> Ensures consistent settings across runs, reducing variability and enabling meaningful comparisons.</li>
+            <li><strong>Scalability:</strong> Adapts to various tools and design configurations, accommodating larger workflows as needed.</li>
+            <li><strong>Collaboration:</strong> Facilitates teamwork by enabling seamless sharing of benchmarking data via version control.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Use Cases</h2>
+        <ul>
+            <li>Evaluating FPGA design performance on different architectures.</li>
+            <li>Comparing vendor tools to select the optimal solution for your project.</li>
+            <li>Analyzing and improving FPGA resource utilization and performance metrics.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Explore More</h2>
+        <p>For additional information and a closer look at the script and its details, visit my <a href="https://github.com/Talha-Moghul/Benchmarking">GitHub repository</a>.</p>
+    </section>
+</body>
+</html>
